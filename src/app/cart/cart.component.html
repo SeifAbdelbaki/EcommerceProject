@@ -1,0 +1,33 @@
+<div class="bg-light p-4 mt-5">
+    
+    <button class="mt-5  px-3 py-2 bg-main text-white border-0 rounded-1" [routerLink]="['/CheckOut/', cart.data._id]" >Check Out<i class="fa fa-cart-shopping"></i></button>
+
+    <div class="d-flex justify-content-between mt-4">
+        <h3>Number of Items: <span class="text-main">{{cart.numOfCartItems}}</span></h3>
+        <h3>Total Price: <span class="text-main">{{cart.data.totalCartPrice}}</span></h3>
+    </div>
+    <div class="row align-items-center" *ngFor="let product of cart.data.products">
+        <div class="col-md-2">
+            <img [src]="product.product.imageCover" class="w-100" alt="" srcset="">
+        </div>
+
+        <div class="col-md-8 align-items-center">
+            <div>
+                <h4>{{product.product.title}}</h4>
+                <span class="text-main">{{product.price}}</span>
+                <div>
+                    <span class="text-danger cursor-pointer" (click)="RemoveItem(product.product.id)">
+                        <i class="fa fa-trash "></i>
+                        Remove
+                    </span>
+                </div>
+            </div>
+        </div>
+        <br>
+        <hr>
+    </div>
+</div>
+
+
+
+  

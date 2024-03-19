@@ -1,0 +1,26 @@
+<div class="bg-light p-4 mt-5" *ngIf="wishlist">
+    <div class="d-flex justify-content-between mt-4">
+      <h3>Number of Items WishListed: <span class="text-main">{{wishlist.numOfCartItems}}</span></h3>
+    </div>
+    
+    <div class="row align-items-center" *ngFor="let product of wishlist.data.products">
+      <div class="col-md-2">
+        <img [src]="product.product.imageCover" class="w-100" alt="" srcset="">
+      </div>
+  
+      <div class="col-md-8 align-items-center">
+        <div>
+          <h4>{{product.product.title}}</h4>
+          <span class="text-main">{{product.price}}</span>
+          <div>
+            <span class="text-danger cursor-pointer">
+              <i class="fa fa-trash text-danger "></i>
+              Remove
+            </span>
+          </div>
+        </div>
+      </div>
+      <br>
+      <hr>
+    </div>
+  </div>

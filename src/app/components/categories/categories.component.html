@@ -1,0 +1,10 @@
+<div class="row mt-5"> 
+    <div class="col-md-3 g-3" *ngFor="let category of allCategories">
+        <div class="product">
+                <img [src]="category.image" height="300px" width="300px" alt="">
+                <h4 class="h6 text-main text-center">{{category.name}}</h4>
+                </div>
+   
+    </div>
+</div>
+
