@@ -29,7 +29,8 @@
 
                 
         <div *ngIf="registerForm.get('password')?.errors && registerForm.get('password')?.touched" class="alert alert-danger mt-2">
-            <p *ngIf="registerForm.get('password')?.getError('required')"> Re-Password is Required</p>
+            <p *ngIf="registerForm.get('password')?.getError('required')"> Password is Required</p>
+            <p *ngIf="registerForm.get('password')?.getError('pattern')"> You need 6 characters for a valid password.</p>
             <p *ngIf="registerForm.get('password')?.getError('mismatch')"> Must match the password.</p>
         </div>
     </div>
@@ -39,8 +40,9 @@
         <input type="password" name="rePassword" id="rePassword" class="form-control" formControlName="rePassword">
 
         <div *ngIf="registerForm.get('rePassword')?.errors && registerForm.get('rePassword')?.touched" class="alert alert-danger mt-2">
-            <p *ngIf="registerForm.get('rePassword')?.getError('required')"> Incorrect, please check if you've entered the right password</p>
+            <p *ngIf="registerForm.get('rePassword')?.getError('required')"> Please write the entered password.</p>
             <p *ngIf="registerForm.get('rePassword')?.getError('pattern')"> You need 6 characters for a valid password.</p>
+            <p *ngIf="registerForm.get('rePassword')?.getError('mismatch')"> Must match the password.</p>
         </div>
     </div>
 

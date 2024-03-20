@@ -23,7 +23,7 @@ export class RegisterComponent {
 
     password: new FormControl ("",[Validators.required, Validators.pattern(/^\w{6,}$/)]),
 
-    rePassword: new FormControl("",[Validators.required]),
+    rePassword: new FormControl("",[Validators.required, Validators.pattern(/^\w{6,}$/)]),
 
     phone: new FormControl("",[Validators.required, Validators.pattern(/^01[125][0-9]{8}$/)])
     },{validators : this.repassConfirm})
@@ -56,8 +56,8 @@ error:(err)=>{
     }
 
     else{
-      g.get('rePassword').value.setErrors({'mismatch': "not matched"})
-      return {'mismatch': "not matched"}
+      g.get('rePassword').setErrors({'mismatch': "not-matched"})
+      return {'mismatch': "not-matched"}
     }
   }
 }
